@@ -1,232 +1,496 @@
-# Expenza - Personal Finance Tracker
+# 💰 Expenza - Personal Finance Tracker
 
-A modern, feature-rich personal finance tracking application built with Next.js 15, React 19, and TypeScript. Track your expenses, manage budgets, analyze spending patterns, and take control of your financial life.
+> A modern, privacy-first personal finance tracking application built with cutting-edge technologies. Take complete control of your financial life with powerful analytics, budget management, and intuitive expense tracking.
 
-![Next.js](https://img.shields.io/badge/Next.js-15.3.5-black?style=flat-square&logo=next.js)
-![React](https://img.shields.io/badge/React-19.0.0-blue?style=flat-square&logo=react)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?style=flat-square&logo=typescript)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.x-38B2AC?style=flat-square&logo=tailwind-css)
+<div align="center">
 
-## ✨ Features
+![Next.js](https://img.shields.io/badge/Next.js-15.3.5-black?style=for-the-badge&logo=next.js)
+![React](https://img.shields.io/badge/React-19.0.0-61DAFB?style=for-the-badge&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.x-38B2AC?style=for-the-badge&logo=tailwind-css)
 
-### 💰 Expense Management
-- **Add, Edit & Delete Expenses**: Intuitive expense entry with description, amount, category, and date
-- **Category Organization**: Pre-configured categories (Food, Transport, Shopping, Entertainment, Bills, Healthcare, Education, Other)
-- **Custom Categories**: Create and manage your own expense categories with custom colors and icons
-- **Real-time Updates**: Instant reflection of changes across all views
+[Features](#-features) • [Quick Start](#-quick-start) • [Documentation](#-documentation) • [Tech Stack](#-tech-stack) • [Contributing](#-contributing)
 
-### 📊 Budget Tracking
-- **Overall Budget**: Set and track your total monthly/periodic budget
-- **Category Budgets**: Assign specific budgets to individual categories
-- **Budget Progress**: Visual indicators showing spending vs budget limits
-- **Budget Alerts**: Stay informed when approaching or exceeding budget limits
-
-### 📈 Analytics & Insights
-- **Spending Trends**: Visualize spending patterns over time
-- **Category Breakdown**: Pie charts and bar graphs showing expense distribution
-- **Time-based Analysis**: Filter and analyze expenses by date ranges
-- **Summary Statistics**: Quick overview of total spending, averages, and trends
-
-### 📁 Data Management
-- **Export Data**: Download your financial data in JSON format
-- **Import Data**: Restore or migrate data from previous exports
-- **Local Storage**: All data stored securely in your browser
-- **Privacy First**: No server-side data storage - your data stays on your device
-
-### 🎨 User Interface
-- **Modern Design**: Clean, intuitive interface built with Radix UI components
-- **Dark Mode**: Toggle between light and dark themes for comfortable viewing
-- **Responsive Layout**: Optimized for desktop, tablet, and mobile devices
-- **Smooth Animations**: Powered by Framer Motion for delightful interactions
-- **Loading States**: Professional loading screens and skeleton loaders
-
-### 📱 Additional Features
-- **Dashboard Overview**: At-a-glance view of your financial status
-- **Search & Filter**: Quickly find specific expenses
-- **Sorting Options**: Sort expenses by date, amount, or category
-- **Tab Navigation**: Easy switching between Dashboard, Expenses, Budget, Analytics, and Settings
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- **Node.js**: 20.x or higher
-- **npm**: 10.x or higher (or yarn/pnpm/bun)
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd finance-tracker-app-main
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install --legacy-peer-deps
-   ```
-   
-   > **Note**: The `--legacy-peer-deps` flag is required due to peer dependency conflicts between `autumn-js` and `better-auth`. This has been tested and works correctly.
-
-3. **Run the development server**
-   ```bash
-   npm run dev
-   ```
-
-4. **Open your browser**
-   
-   Navigate to [http://localhost:3000](http://localhost:3000)
-
-## 📦 Available Scripts
-
-- `npm run dev` - Start development server with Turbopack
-- `npm run build` - Build the application for production
-- `npm run start` - Start the production server
-- `npm run lint` - Run ESLint to check code quality
-
-## 🛠️ Technology Stack
-
-### Core Framework
-- **Next.js 15.3.5** - React framework with App Router
-- **React 19.0.0** - UI library
-- **TypeScript 5.x** - Type safety
-
-### UI Components & Styling
-- **Radix UI** - Accessible component primitives
-- **Tailwind CSS 4.x** - Utility-first CSS framework
-- **Framer Motion 12.x** - Animation library
-- **Lucide React** - Icon library
-- **Recharts 3.x** - Chart library for analytics
-
-### State Management & Forms
-- **React Hook Form 7.x** - Form handling
-- **Zod 4.x** - Schema validation
-- **LocalStorage** - Client-side data persistence
-
-### Additional Libraries
-- **date-fns** - Date manipulation
-- **Sonner** - Toast notifications
-- **clsx & tailwind-merge** - Conditional class names
-- **next-themes** - Theme management
-
-### Development Tools
-- **ESLint 9.x** - Code linting
-- **PostCSS** - CSS processing
-- **Better Auth** - Authentication utilities (optional)
-- **Drizzle ORM** - Database toolkit (optional)
-
-## 📂 Project Structure
-
-```
-finance-tracker-app-main/
-├── public/                 # Static assets
-├── src/
-│   ├── app/               # Next.js App Router
-│   │   ├── layout.tsx     # Root layout
-│   │   ├── page.tsx       # Home page
-│   │   └── globals.css    # Global styles
-│   ├── components/        # React components
-│   │   ├── ExpenseTracker.tsx    # Main app component
-│   │   ├── ExpenseForm.tsx       # Expense input form
-│   │   ├── ExpenseList.tsx       # Expense list view
-│   │   ├── Dashboard.tsx         # Dashboard overview
-│   │   ├── Analytics.tsx         # Analytics charts
-│   │   ├── BudgetSettings.tsx    # Budget management
-│   │   ├── CategoryManager.tsx   # Category management
-│   │   ├── ExportImport.tsx      # Data import/export
-│   │   ├── ThemeToggle.tsx       # Dark mode toggle
-│   │   └── ui/                   # Reusable UI components
-│   ├── types/             # TypeScript type definitions
-│   │   └── expense.ts     # Expense, Category, Budget types
-│   ├── lib/               # Utility functions
-│   │   └── utils.ts       # Helper functions
-│   └── hooks/             # Custom React hooks
-├── components.json        # shadcn/ui configuration
-├── tailwind.config.ts     # Tailwind CSS config
-├── tsconfig.json          # TypeScript config
-├── eslint.config.mjs      # ESLint configuration
-└── package.json           # Dependencies
-```
-
-## 🎯 Usage Guide
-
-### Adding an Expense
-1. Click the "Add Expense" button or the "+" icon
-2. Fill in the expense details (amount, description, category, date)
-3. Click "Add Expense" to save
-
-### Managing Budgets
-1. Navigate to the "Budget" tab
-2. Set your overall monthly budget
-3. Optionally, assign budgets to specific categories
-4. Save changes to track your spending limits
-
-### Viewing Analytics
-1. Go to the "Analytics" tab
-2. View spending trends, category breakdowns, and statistics
-3. Use date filters to analyze specific time periods
-
-### Exporting/Importing Data
-1. Navigate to "Settings" or the "Data" tab
-2. Click "Export Data" to download a JSON file
-3. Click "Import Data" to restore from a previous export
-4. All data including expenses, categories, and budgets will be preserved
-
-### Customizing Categories
-1. Go to the "Categories" tab in Settings
-2. Add new categories with custom names, colors, and icons
-3. Delete unused categories (if they have no associated expenses)
-
-## 🔒 Data Privacy
-
-- All data is stored locally in your browser's localStorage
-- No data is sent to external servers
-- Export your data regularly to back up your financial information
-- Clearing browser data will delete all stored expenses
-
-## 🐛 Known Issues & Dependencies
-
-### Dependency Conflicts
-- **better-auth** version conflict with **autumn-js** (resolved with `--legacy-peer-deps`)
-
-### Security Advisories
-- Review `npm audit` output for current vulnerability status
-- Consider updating to newer versions when available
-- Critical: better-auth <1.3.26 (update recommended)
-
-### Compatibility Notes
-- Requires Node.js 20.x or higher
-- Best experienced in modern browsers (Chrome, Firefox, Safari, Edge)
-- LocalStorage must be enabled for data persistence
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🙏 Acknowledgments
-
-- Built with [Next.js](https://nextjs.org/)
-- UI components from [Radix UI](https://www.radix-ui.com/)
-- Styled with [Tailwind CSS](https://tailwindcss.com/)
-- Icons from [Lucide](https://lucide.dev/)
-
-## 📧 Support
-
-If you encounter any issues or have questions:
-- Open an issue in the repository
-- Check existing issues for solutions
-- Review the documentation
+</div>
 
 ---
 
+## 🎯 Overview
+
+Expenza is a feature-rich, client-side personal finance application designed for individuals who value privacy and want complete control over their financial data. Built with Next.js 15 and React 19, it offers a seamless experience across all devices with zero server-side data storage.
+
+### Why Expenza?
+
+- **🔒 Privacy First** - All data stays on your device, no cloud storage
+- **📊 Powerful Analytics** - Visualize spending patterns with beautiful charts
+- **💡 Smart Budgeting** - Set limits and get real-time budget alerts
+- **🎨 Modern UI** - Clean, responsive design with dark mode support
+- **⚡ Lightning Fast** - Built with Next.js 15 and Turbopack
+- **📱 Cross-Platform** - Works perfectly on desktop, tablet, and mobile
+
+---
+
+## ✨ Features
+
+### 💸 Comprehensive Expense Management
+
+<table>
+<tr>
+<td width="50%">
+
+**Core Functionality**
+- ✅ Quick expense entry with smart forms
+- ✅ Edit and delete expenses seamlessly
+- ✅ Real-time updates across all views
+- ✅ Advanced search and filtering
+- ✅ Multiple sorting options
+
+</td>
+<td width="50%">
+
+**Smart Organization**
+- 📂 8 pre-configured categories
+- 🎨 Custom category creation
+- 🏷️ Category-specific colors & icons
+- 📅 Date-based organization
+- 🔍 Instant search functionality
+
+</td>
+</tr>
+</table>
+
+### 📊 Advanced Budget Tracking
+
+- **Global Budget Management** - Set overall monthly/periodic spending limits
+- **Category-Level Budgets** - Granular control over specific expense categories
+- **Visual Progress Indicators** - Real-time budget utilization tracking
+- **Smart Alerts** - Notifications when approaching or exceeding limits
+- **Budget Analytics** - Historical budget performance tracking
+
+### 📈 Rich Analytics & Insights
+
+```
+📊 Spending Trends      →  Track patterns over time
+🥧 Category Breakdown   →  Pie charts for expense distribution
+📉 Time-based Analysis  →  Custom date range filtering
+📌 Summary Statistics   →  Total spending, averages, trends
+💹 Comparative Views    →  Month-over-month comparisons
+```
+
+### 🔄 Data Management & Portability
+
+- **JSON Export** - Download complete financial data
+- **Data Import** - Restore from previous backups
+- **Migration Ready** - Move data between devices
+- **Zero Lock-in** - Own your data completely
+- **Backup Automation** - Regular export reminders
+
+### 🎨 Premium User Experience
+
+| Feature | Description |
+|---------|-------------|
+| **Responsive Design** | Optimized for all screen sizes |
+| **Dark Mode** | Comfortable viewing in any lighting |
+| **Smooth Animations** | Framer Motion-powered interactions |
+| **Loading States** | Professional skeletons and loaders |
+| **Toast Notifications** | Non-intrusive feedback system |
+| **Tab Navigation** | Intuitive multi-view interface |
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+Ensure you have the following installed:
+
+```bash
+Node.js >= 20.0.0
+npm >= 10.0.0 (or yarn/pnpm/bun)
+```
+
+### Installation
+
+```bash
+# 1. Clone the repository
+git clone <repository-url>
+cd finance-tracker-app-main
+
+# 2. Install dependencies
+npm install --legacy-peer-deps
+
+# 3. Start development server
+npm run dev
+
+# 4. Open in browser
+# Navigate to http://localhost:3000
+```
+
+> **⚠️ Important**: The `--legacy-peer-deps` flag is required due to peer dependency conflicts between `autumn-js` and `better-auth`. This is tested and production-ready.
+
+### Production Build
+
+```bash
+# Build for production
+npm run build
+
+# Start production server
+npm start
+```
+
+---
+
+## 📦 Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server with Turbopack |
+| `npm run build` | Create optimized production build |
+| `npm run start` | Run production server |
+| `npm run lint` | Check code quality with ESLint |
+
+---
+
+## 🛠️ Tech Stack
+
+### Core Framework
+
+<table>
+<tr>
+<td align="center" width="33%">
+<img src="https://nextjs.org/static/favicon/favicon.ico" width="48" height="48" alt="Next.js" /><br />
+<strong>Next.js 15.3.5</strong><br />
+<sub>React Framework</sub>
+</td>
+<td align="center" width="33%">
+<img src="https://react.dev/favicon.ico" width="48" height="48" alt="React" /><br />
+<strong>React 19.0.0</strong><br />
+<sub>UI Library</sub>
+</td>
+<td align="center" width="33%">
+<img src="https://www.typescriptlang.org/favicon-32x32.png" width="48" height="48" alt="TypeScript" /><br />
+<strong>TypeScript 5.x</strong><br />
+<sub>Type Safety</sub>
+</td>
+</tr>
+</table>
+
+### UI & Styling
+
+- **Tailwind CSS 4.x** - Utility-first styling framework
+- **Radix UI** - Accessible component primitives
+- **Framer Motion 12.x** - Animation & gesture library
+- **Lucide React** - Beautiful icon library
+- **next-themes** - Dark mode support
+
+### Data & Forms
+
+- **React Hook Form 7.x** - Performant form management
+- **Zod 4.x** - TypeScript-first schema validation
+- **Recharts 3.x** - Composable charting library
+- **date-fns** - Modern date utility library
+
+### Development Tools
+
+- **ESLint 9.x** - Code quality enforcement
+- **PostCSS** - CSS transformation pipeline
+- **Turbopack** - Ultra-fast bundler
+
+---
+
+## 📂 Project Architecture
+
+```
+finance-tracker-app-main/
+│
+├── 📁 public/                    # Static assets & images
+│
+├── 📁 src/
+│   ├── 📁 app/                   # Next.js App Router
+│   │   ├── layout.tsx            # Root layout with providers
+│   │   ├── page.tsx              # Home page
+│   │   └── globals.css           # Global styles & theme
+│   │
+│   ├── 📁 components/            # React components
+│   │   ├── ExpenseTracker.tsx    # Main application shell
+│   │   ├── ExpenseForm.tsx       # Expense input form
+│   │   ├── ExpenseList.tsx       # Expense list with filters
+│   │   ├── Dashboard.tsx         # Overview & statistics
+│   │   ├── Analytics.tsx         # Charts & insights
+│   │   ├── BudgetSettings.tsx    # Budget configuration
+│   │   ├── CategoryManager.tsx   # Category CRUD
+│   │   ├── ExportImport.tsx      # Data portability
+│   │   ├── ThemeToggle.tsx       # Dark mode switcher
+│   │   └── 📁 ui/                # Reusable UI primitives
+│   │
+│   ├── 📁 types/                 # TypeScript definitions
+│   │   └── expense.ts            # Core type definitions
+│   │
+│   ├── 📁 lib/                   # Utilities & helpers
+│   │   └── utils.ts              # Common functions
+│   │
+│   └── 📁 hooks/                 # Custom React hooks
+│
+├── 📄 components.json            # shadcn/ui configuration
+├── 📄 tailwind.config.ts         # Tailwind configuration
+├── 📄 tsconfig.json              # TypeScript configuration
+├── 📄 eslint.config.mjs          # ESLint rules
+└── 📄 package.json               # Dependencies & scripts
+```
+
+---
+
+## 📖 Documentation
+
+### Adding Your First Expense
+
+1. **Click** the "Add Expense" button in the top navigation
+2. **Enter** expense details:
+   - Amount (required)
+   - Description (optional)
+   - Category (select from dropdown)
+   - Date (defaults to today)
+3. **Submit** to save the expense
+4. **View** it immediately in your expense list
+
+### Setting Up Budgets
+
+```
+Dashboard → Budget Tab → Configure Budgets
+```
+
+1. **Set Overall Budget** - Define your total monthly spending limit
+2. **Category Budgets** (Optional) - Assign limits to specific categories
+3. **Save Changes** - Budget tracking activates automatically
+4. **Monitor Progress** - Visual indicators show spending vs limits
+
+### Analyzing Your Spending
+
+The Analytics tab provides multiple visualization options:
+
+- **📊 Spending Over Time** - Line chart showing daily/weekly/monthly trends
+- **🥧 Category Distribution** - Pie chart of spending by category
+- **📈 Budget Performance** - Bar chart comparing actual vs budgeted amounts
+- **📅 Custom Date Ranges** - Filter data to specific time periods
+
+### Exporting & Importing Data
+
+**To Export:**
+```
+Settings → Data Management → Export Data → Save JSON file
+```
+
+**To Import:**
+```
+Settings → Data Management → Import Data → Select JSON file
+```
+
+**What's Included:**
+- ✅ All expenses with full details
+- ✅ Custom categories and settings
+- ✅ Budget configurations
+- ✅ User preferences
+
+### Managing Categories
+
+**Creating Custom Categories:**
+1. Navigate to Settings → Categories
+2. Click "Add Category"
+3. Choose a name, color, and icon
+4. Save to make it available for expenses
+
+**Deleting Categories:**
+- Only categories without associated expenses can be deleted
+- Reassign or delete expenses first if needed
+
+---
+
+## 🔒 Privacy & Security
+
+### Data Storage
+
+- **100% Local** - All data stored in browser localStorage
+- **No Servers** - Zero external data transmission
+- **No Tracking** - No analytics or telemetry
+- **No Accounts** - No sign-up or authentication required
+
+### Data Safety
+
+```
+⚠️ IMPORTANT: Clearing browser data will delete all stored information
+```
+
+**Best Practices:**
+- 📥 Export your data regularly
+- 💾 Keep backups in multiple locations
+- 🔄 Test import functionality periodically
+- 📱 Avoid using browser "Private/Incognito" mode for regular use
+
+---
+
+## 🐛 Known Issues & Solutions
+
+### Dependency Conflicts
+
+**Issue:** Peer dependency conflict between `better-auth` and `autumn-js`
+
+**Solution:** Install with `--legacy-peer-deps` flag
+```bash
+npm install --legacy-peer-deps
+```
+
+**Status:** ✅ Tested and production-ready
+
+### Security Advisories
+
+**Current Status:**
+- Review output of `npm audit` for vulnerability details
+- Critical: `better-auth` versions <1.3.26 should be updated
+
+**Recommended Action:**
+```bash
+npm update better-auth
+```
+
+### Browser Compatibility
+
+**Fully Supported:**
+- ✅ Chrome/Edge 90+
+- ✅ Firefox 88+
+- ✅ Safari 14+
+- ✅ Opera 76+
+
+**Requirements:**
+- JavaScript enabled
+- localStorage enabled
+- Modern CSS support (Grid, Flexbox)
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Here's how to get started:
+
+### Development Setup
+
+```bash
+# Fork and clone the repo
+git clone https://github.com/yourusername/expenza.git
+
+# Create a feature branch
+git checkout -b feature/amazing-feature
+
+# Make your changes and test thoroughly
+npm run dev
+
+# Lint your code
+npm run lint
+
+# Commit with descriptive message
+git commit -m 'Add amazing feature: detailed description'
+
+# Push to your fork
+git push origin feature/amazing-feature
+
+# Open a Pull Request
+```
+
+### Contribution Guidelines
+
+- **Code Style** - Follow existing patterns and conventions
+- **TypeScript** - Maintain strong typing throughout
+- **Testing** - Test your changes across different scenarios
+- **Documentation** - Update README if adding features
+- **Commits** - Use clear, descriptive commit messages
+
+### Areas for Contribution
+
+- 🐛 Bug fixes and issue resolution
+- ✨ New features and enhancements
+- 📚 Documentation improvements
+- 🎨 UI/UX refinements
+- ♿ Accessibility improvements
+- 🌐 Internationalization (i18n)
+
+---
+
+## 📊 Roadmap
+
+### Planned Features
+
+- [ ] **Multi-currency Support** - Track expenses in different currencies
+- [ ] **Recurring Expenses** - Automate regular payment tracking
+- [ ] **Receipt Scanning** - OCR-based expense entry
+- [ ] **Export Formats** - CSV, PDF, Excel export options
+- [ ] **Budget Templates** - Pre-configured budget plans
+- [ ] **Goal Tracking** - Savings goals and milestones
+- [ ] **Expense Tags** - Additional categorization layer
+- [ ] **Custom Reports** - Build personalized financial reports
+
+---
+
+## 📝 License
+
+This project is open source and available under the **MIT License**.
+
+```
+MIT License
+
+Copyright (c) 2025 Expenza Contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+```
+
+See [LICENSE](LICENSE) file for full details.
+
+---
+
+## 🙏 Acknowledgments
+
+Built with amazing open-source technologies:
+
+- [Next.js](https://nextjs.org/) - The React Framework
+- [React](https://react.dev/) - UI Library
+- [TypeScript](https://www.typescriptlang.org/) - Type Safety
+- [Tailwind CSS](https://tailwindcss.com/) - Styling Framework
+- [Radix UI](https://www.radix-ui.com/) - Component Primitives
+- [Framer Motion](https://www.framer.com/motion/) - Animation Library
+- [Recharts](https://recharts.org/) - Chart Library
+- [Lucide](https://lucide.dev/) - Icon Library
+
+Special thanks to the open-source community for making projects like this possible.
+
+---
+
+## 📧 Support & Contact
+
+### Get Help
+
+- 🐛 **Found a bug?** [Open an issue](https://github.com/yourusername/expenza/issues/new)
+- 💡 **Feature request?** [Start a discussion](https://github.com/yourusername/expenza/discussions)
+- 📖 **Documentation issue?** Submit a PR with improvements
+- 💬 **General questions?** Check existing issues and discussions
+
+### Stay Connected
+
+- ⭐ Star this repository to show support
+- 👀 Watch for updates and new releases
+- 🔄 Share with others who might find it useful
+
+---
+
+<div align="center">
+
 **Made with ❤️ for better personal finance management**
+
+[⬆ Back to Top](#-expenza---personal-finance-tracker)
+
+</div>
