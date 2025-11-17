@@ -1,4 +1,4 @@
-# 💰 Expenza - Personal Finance Tracker
+# 💰 Expenza - Personal Finance Tracker.
 
 > A modern, privacy-first personal finance tracking application built with cutting-edge technologies. Take complete control of your financial life with powerful analytics, budget management, and intuitive expense tracking.
 
